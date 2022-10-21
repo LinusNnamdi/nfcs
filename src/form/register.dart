@@ -8,6 +8,11 @@ class _SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<_SignupScreen> {
   @override
   Widget build(BuildContext context) {
+    //*
+    //? Phone size
+    final size = MediaQuery.of(context).size;
+
+    //*
     return Scaffold(
         backgroundColor: const Color(0xffE6E6FA),
         body: Padding(
@@ -16,6 +21,8 @@ class _SignupScreenState extends State<_SignupScreen> {
               child: SafeArea(
                   child: Column(
                 children: [
+                  //*
+                  //? Header To Registration Page
                   Container(
                     alignment: Alignment.center,
                     child: const Text(
