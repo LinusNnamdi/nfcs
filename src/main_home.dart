@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Nfcs app by EarnDee",
-      home: _hasLoggedIn ? const _HomePages() : _WelcomeScreen(),
+      home: _hasLoggedIn ? const _HomePages() : _SignupScreen(),
     );
   }
 }
