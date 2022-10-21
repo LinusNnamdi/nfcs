@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\Dart_packages"
+		},
+		{
+			"path": "..\\..\\..\\..\\Dart_Packages_Test"
+		},
+		{
+			"path": "..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\Flutter_Apps_Testing"
+		}
+	],
+	"settings": {}
+}
