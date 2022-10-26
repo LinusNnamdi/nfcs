@@ -28,7 +28,19 @@ class _RegistrationFormState extends State<_RegistrationForm> {
           //*
           TextFormField(
             decoration: const InputDecoration(
-              hintText: "baptismal name, then surname",
+              hintText: "Baptismal name, then surname",
+            ),
+          ),
+          //*
+          const SizedBox(
+            height: _defaultPadding,
+          ),
+          //*
+          _textFieldName("Society Names"),
+          //*
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: "Confraternity of the most holy rosary",
             ),
           ),
           //*
@@ -74,7 +86,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             height: _defaultPadding,
           ),
           //*
-          _textFieldName("School Abbreviation"),
+          _textFieldName("School short name"),
           //*
           TextFormField(
             decoration: const InputDecoration(
@@ -86,11 +98,35 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             height: _defaultPadding,
           ),
           //*
-          _textFieldName("Full Lodge address"),
+          _textFieldName("School Lodge address"),
           //*
           TextFormField(
             decoration: const InputDecoration(
-              hintText: "room c5, yahoo junction, ifite.",
+              hintText: "room c5, Aso rock villa, yahoo junction, ifite.",
+            ),
+          ),
+          //*
+          const SizedBox(
+            height: _defaultPadding,
+          ),
+          //*
+          _textFieldName("Home Address"),
+          //*
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: "Compound, Village, Town, LGA, State.",
+            ),
+          ),
+          //*
+          const SizedBox(
+            height: _defaultPadding,
+          ),
+          //*
+          _textFieldName("Gender"),
+          //*
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: "Male or Female?",
             ),
           ),
           //*

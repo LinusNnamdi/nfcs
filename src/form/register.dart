@@ -9,61 +9,75 @@ class _SignupScreenState extends State<_SignupScreen> {
   @override
   Widget build(BuildContext context) {
     //*
-    //? Phone size
     final size = MediaQuery.of(context).size;
 
     //*
     return Scaffold(
-        backgroundColor: const Color(0xffE6E6FA),
+        backgroundColor: const Color(0xffCAE1FF),
         body: Padding(
             padding: const EdgeInsets.all(_defaultPadding),
             child: SingleChildScrollView(
-              child: SafeArea(
-                  child: Column(
-                children: [
-                  //*
-                  //? Header To Registration Page
-                  Container(
-                    alignment: Alignment.center,
-                    child: const Text(
-                      "NFCS REGISTRATION",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                      ),
-                    ),
+              child: Stack(children: [
+                Positioned(
+                  height: size.height,
+                  width: size.width,
+                  child: Image.asset(
+                    _holyGhostImage,
+                    height: size.height,
+                    width: size.width,
                   ),
-
-                  //*
-
-                  //*
-                  Row(
+                ),
+                Positioned(
+                  height: size.height,
+                  left: 0,
+                  top: 0,
+                  width: size.width,
+                  child: SafeArea(
+                      child: Column(
                     children: [
-                      const Text(
-                        "Already have an account?",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontStyle: FontStyle.italic,
+                      Container(
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "NFCS REGISTRATION",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
                         ),
                       ),
-                      TextButton(
-                          onPressed: () {
-                            //! Log in url
-                          },
-                          child: const Text("Log in",
-                              style: TextStyle(
-                                color: Color(0xff0000ff),
-                                fontWeight: FontWeight.bold,
-                              ))),
+
+                      //*
+
+                      //*
+                      Row(
+                        children: [
+                          const Text(
+                            "Already have an account?",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                          TextButton(
+                              onPressed: () {
+                                //! Log in url
+                              },
+                              child: const Text("Log in",
+                                  style: TextStyle(
+                                    color: Color(0xff0000ff),
+                                    fontWeight: FontWeight.bold,
+                                  ))),
+                        ],
+                      ),
+
+                      //*
+                      _RegistrationForm(),
+
+                      //*
                     ],
-                  ),
-
-                  //*
-                  _RegistrationForm(),
-
-                  //*
-                ],
-              )),
+                  )),
+                )
+              ]),
             )));
   }
 }
