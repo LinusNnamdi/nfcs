@@ -101,6 +101,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
           _textFieldName("School Lodge address"),
           //*
           TextFormField(
+            keyboardType: TextInputType.streetAddress,
             decoration: const InputDecoration(
               hintText: "room c5, Aso rock villa, yahoo junction, ifite.",
             ),
@@ -113,6 +114,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
           _textFieldName("Home Address"),
           //*
           TextFormField(
+            keyboardType: TextInputType.streetAddress,
             decoration: const InputDecoration(
               hintText: "Compound, Village, Town, LGA, State.",
             ),
@@ -137,8 +139,10 @@ class _RegistrationFormState extends State<_RegistrationForm> {
           _textFieldName("Password"),
           //*
           TextFormField(
+            obscuringCharacter: "?",
+            obscureText: true,
             decoration: const InputDecoration(
-              hintText: "ss89203j]\\'[",
+              hintText: "Am i a good nfcser?",
             ),
           ),
           //*
@@ -149,9 +153,15 @@ class _RegistrationFormState extends State<_RegistrationForm> {
           _textFieldName("Confirm Password"),
           //*
           TextFormField(
+            obscuringCharacter: "?",
+            obscureText: true,
             decoration: const InputDecoration(
-              hintText: "ss89203j]\\'[",
+              hintText: "Am i a good nfcser?",
             ),
+          ),
+          //*
+          const SizedBox(
+            height: _defaultPadding * 2,
           ),
         ],
       ),

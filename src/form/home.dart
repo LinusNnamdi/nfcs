@@ -13,7 +13,7 @@ class _FormHome extends StatelessWidget {
 
         //*
         //? Used to style forms input fields.
-        primaryColor: const Color(0xff4444ff),
+        primaryColor: Colors.transparent,
 
         textTheme: Theme.of(context).textTheme.apply(
               displayColor: _textColor,
@@ -24,8 +24,8 @@ class _FormHome extends StatelessWidget {
           border: _textFieldBorder(0.1),
           enabledBorder: _textFieldBorder(0.1),
           focusedBorder: _textFieldBorder(0.1),
-          hintStyle: const TextStyle(
-            color: Color(0xff778899),
+          hintStyle: TextStyle(
+            color: const Color(0xff000000).withOpacity(8.0),
           ),
           contentPadding: const EdgeInsets.symmetric(
             vertical: 5,
