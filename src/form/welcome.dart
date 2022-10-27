@@ -26,7 +26,7 @@ class _WelcomeScreenState extends State<_WelcomeScreen> {
                     BlendMode.modulate,
                   ),
                   child: Image.asset(
-                    _nfcsIcon,
+                    _nfcsLogo,
                     width: size.width - 8.0,
                     height: size.height,
                   )),

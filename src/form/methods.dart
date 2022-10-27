@@ -18,7 +18,7 @@ Widget _textFieldName(String fieldName) {
     fieldName,
     style: TextStyle(
       fontWeight: FontWeight.w600,
-      color: Color(0xff515151),
+      color: const Color(0xff000000).withOpacity(1),
     ),
   );
 }

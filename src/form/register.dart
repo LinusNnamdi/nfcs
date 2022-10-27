@@ -9,20 +9,28 @@ class _SignupScreenState extends State<_SignupScreen> {
   @override
   Widget build(BuildContext context) {
     //*
-    //? Phone size
     final size = MediaQuery.of(context).size;
 
     //*
     return Scaffold(
-        backgroundColor: const Color(0xffE6E6FA),
-        body: Padding(
-            padding: const EdgeInsets.all(_defaultPadding),
-            child: SingleChildScrollView(
+        backgroundColor: const Color(0xffCAE1FF),
+        body: Stack(
+          fit: StackFit.expand,
+          children: [
+            Positioned(
+              left: -size.width * 0.5,
+              top: -size.height * 0.5,
+              child: Image.asset(
+                _holyGhostImage,
+                width: size.width * 2,
+                height: size.height * 2,
+              ),
+            ),
+            SingleChildScrollView(
+              padding: const EdgeInsets.all(_defaultPadding),
               child: SafeArea(
                   child: Column(
                 children: [
-                  //*
-                  //? Header To Registration Page
                   Container(
                     alignment: Alignment.center,
                     child: const Text(
@@ -62,8 +70,23 @@ class _SignupScreenState extends State<_SignupScreen> {
                   _RegistrationForm(),
 
                   //*
+                  Container(
+                    color: Colors.black.withOpacity(0.2),
+                    width: double.infinity,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text("Register",
+                          style: TextStyle(
+                            color: const Color(0xff000000).withOpacity(1),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          )),
+                    ),
+                  )
                 ],
               )),
-            )));
+            ),
+          ],
+        ));
   }
 }
