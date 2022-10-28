@@ -1,11 +1,13 @@
 part of "../main.dart";
 
-class _SignupScreen extends StatefulWidget {
-  @override
-  _SignupScreenState createState() => _SignupScreenState();
-}
+class _SignupScreen extends StatelessWidget {
+  //*
+  _SignupScreen({Key? key}) : super(key: key);
 
-class _SignupScreenState extends State<_SignupScreen> {
+  //*
+  final _formKey = GlobalKey<FormState>();
+
+  //*
   @override
   Widget build(BuildContext context) {
     //*
@@ -67,14 +69,18 @@ class _SignupScreenState extends State<_SignupScreen> {
                   ),
 
                   //*
-                  _RegistrationForm(),
+                  _RegistrationForm(formKey: _formKey),
 
                   //*
                   Container(
                     color: Colors.black.withOpacity(0.2),
                     width: double.infinity,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          //! Registers the person.
+                        } else {}
+                      },
                       child: Text("Register",
                           style: TextStyle(
                             color: const Color(0xff000000).withOpacity(1),

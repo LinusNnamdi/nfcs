@@ -1,23 +1,34 @@
 part of '../main.dart';
 
-class _RegistrationForm extends StatefulWidget {
-  @override
-  _RegistrationFormState createState() => _RegistrationFormState();
-}
+class _RegistrationForm extends StatelessWidget {
+  //*
+  const _RegistrationForm({Key? key, required this.formKey}) : super(key: key);
 
-class _RegistrationFormState extends State<_RegistrationForm> {
+  //*
+  final GlobalKey formKey;
+
+  //*
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: formKey,
       child: ListBody(
         children: [
           //*
           _textFieldName("First Name"),
           //*
           TextFormField(
+            //*
+            //? This display an input but it's decoration are defined
+            //? in home.dart MaterialApp.
             decoration: const InputDecoration(
               hintText: "Native Name",
             ),
+
+            //*
+            //? This uses the package form field Validator to make sure
+            //?that there is an input.
+            validator: RequiredValidator(errorText: "Name is needed"),
           ),
           //*
           const SizedBox(
@@ -25,11 +36,13 @@ class _RegistrationFormState extends State<_RegistrationForm> {
           ),
           //*
           _textFieldName("Other Names"),
+
           //*
           TextFormField(
             decoration: const InputDecoration(
               hintText: "Baptismal name, then surname",
             ),
+            validator: RequiredValidator(errorText: "Name is needed"),
           ),
           //*
           const SizedBox(
@@ -42,6 +55,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "Confraternity of the most holy rosary",
             ),
+            // validator: RequiredValidator(errorText: "Society name is needed"),
           ),
           //*
           const SizedBox(
@@ -55,6 +69,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "myEmail@host.com",
             ),
+            validator: EmailValidator(errorText: "Valid email Required."),
           ),
           //*
           const SizedBox(
@@ -68,6 +83,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "+1238148478414",
             ),
+            validator: RequiredValidator(errorText: "Your digit is needed"),
           ),
           //*
           const SizedBox(
@@ -80,6 +96,8 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "Electrical Engineering",
             ),
+            validator: RequiredValidator(
+                errorText: "Department and faculty is needed"),
           ),
           //*
           const SizedBox(
@@ -92,6 +110,8 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "Unizik",
             ),
+            validator:
+                RequiredValidator(errorText: "Your school name is needed"),
           ),
           //*
           const SizedBox(
@@ -105,6 +125,8 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "room c5, Aso rock villa, yahoo junction, ifite.",
             ),
+            // validator: RequiredValidator(
+            //   errorText: "Your school address is needed"),
           ),
           //*
           const SizedBox(
@@ -118,6 +140,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "Compound, Village, Town, LGA, State.",
             ),
+            // validator: RequiredValidator(errorText: "Name is needed"),
           ),
           //*
           const SizedBox(
@@ -130,6 +153,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "Male or Female?",
             ),
+            validator: RequiredValidator(errorText: "Your gender is needed"),
           ),
           //*
           const SizedBox(
@@ -144,6 +168,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "Am i a good nfcser?",
             ),
+            validator: _passWordValidator,
           ),
           //*
           const SizedBox(
@@ -158,6 +183,7 @@ class _RegistrationFormState extends State<_RegistrationForm> {
             decoration: const InputDecoration(
               hintText: "Am i a good nfcser?",
             ),
+            validator: _passWordValidator,
           ),
           //*
           const SizedBox(
