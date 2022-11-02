@@ -20,13 +20,14 @@ class _SignupScreen extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Positioned(
-              left: -size.width * 0.5,
-              top: -size.height * 0.5,
-              child: Image.asset(
-                _holyGhostImage,
-                width: size.width * 2,
-                height: size.height * 2,
-              ),
+              child: Image.asset("my_asset/images/background1.jpg"),
+              // left: -size.width * 0.5,
+              // top: -size.height * 0.5,
+              // child: Image.asset(
+              //   _holyGhostImage,
+              //   width: size.width * 2,
+              //   height: size.height * 2,
+              // ),
             ),
             SingleChildScrollView(
               padding: const EdgeInsets.all(_defaultPadding),
