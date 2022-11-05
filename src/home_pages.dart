@@ -8,14 +8,7 @@
 // .
 part of 'main.dart';
 
-class _HomePages extends StatefulWidget {
-  const _HomePages({Key? key}) : super(key: key);
-
-  @override
-  State<_HomePages> createState() => _HomePagesState();
-}
-
-class _HomePagesState extends State<_HomePages> {
+class _HomePages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //*

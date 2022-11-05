@@ -29,6 +29,9 @@ class _RegistrationForm extends StatelessWidget {
             //? This uses the package form field Validator to make sure
             //?that there is an input.
             validator: RequiredValidator(errorText: "Name is needed"),
+            onSaved: (input) {
+              _firstName = input;
+            },
           ),
           //*
           const SizedBox(
@@ -43,19 +46,41 @@ class _RegistrationForm extends StatelessWidget {
               hintText: "Baptismal name, then surname",
             ),
             validator: RequiredValidator(errorText: "Name is needed"),
+            onSaved: (input) {
+              _otherNames = input;
+            },
           ),
           //*
           const SizedBox(
             height: _defaultPadding,
           ),
           //*
-          _textFieldName("Society Names"),
+          _textFieldName("Pius Society Names"),
           //*
           TextFormField(
             decoration: const InputDecoration(
               hintText: "Confraternity of the most holy rosary",
             ),
             // validator: RequiredValidator(errorText: "Society name is needed"),
+            onSaved: (input) {
+              _pSociety = input;
+            },
+          ),
+          //*
+          const SizedBox(
+            height: _defaultPadding,
+          ),
+          //*
+          _textFieldName("Social Society Names"),
+          //*
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: "Confraternity of the most holy rosary",
+            ),
+            // validator: RequiredValidator(errorText: "Society name is needed"),
+            onSaved: (input) {
+              _sSociety = input;
+            },
           ),
           //*
           const SizedBox(
@@ -70,6 +95,9 @@ class _RegistrationForm extends StatelessWidget {
               hintText: "myEmail@host.com",
             ),
             validator: EmailValidator(errorText: "Valid email Required."),
+            onSaved: (input) {
+              _email = input;
+            },
           ),
           //*
           const SizedBox(
@@ -84,6 +112,9 @@ class _RegistrationForm extends StatelessWidget {
               hintText: "+1238148478414",
             ),
             validator: RequiredValidator(errorText: "Your digit is needed"),
+            onSaved: (input) {
+              _digit = input;
+            },
           ),
           //*
           const SizedBox(
@@ -98,6 +129,9 @@ class _RegistrationForm extends StatelessWidget {
             ),
             validator: RequiredValidator(
                 errorText: "Department and faculty is needed"),
+            onSaved: (input) {
+              _department = input;
+            },
           ),
           //*
           const SizedBox(
@@ -112,6 +146,9 @@ class _RegistrationForm extends StatelessWidget {
             ),
             validator:
                 RequiredValidator(errorText: "Your school name is needed"),
+            onSaved: (input) {
+              _school = input;
+            },
           ),
           //*
           const SizedBox(
@@ -127,6 +164,9 @@ class _RegistrationForm extends StatelessWidget {
             ),
             // validator: RequiredValidator(
             //   errorText: "Your school address is needed"),
+            onSaved: (input) {
+              _schoolAddress = input;
+            },
           ),
           //*
           const SizedBox(
@@ -141,6 +181,9 @@ class _RegistrationForm extends StatelessWidget {
               hintText: "Compound, Village, Town, LGA, State.",
             ),
             // validator: RequiredValidator(errorText: "Name is needed"),
+            onSaved: (input) {
+              _homeAddress = input;
+            },
           ),
           //*
           const SizedBox(
@@ -154,6 +197,9 @@ class _RegistrationForm extends StatelessWidget {
               hintText: "Male or Female?",
             ),
             validator: RequiredValidator(errorText: "Your gender is needed"),
+            onSaved: (input) {
+              _gender = input;
+            },
           ),
           //*
           const SizedBox(
@@ -169,6 +215,9 @@ class _RegistrationForm extends StatelessWidget {
               hintText: "Am i a good nfcser?",
             ),
             validator: _passWordValidator,
+            onSaved: (input) {
+              _password = input;
+            },
           ),
           //*
           const SizedBox(
@@ -183,7 +232,10 @@ class _RegistrationForm extends StatelessWidget {
             decoration: const InputDecoration(
               hintText: "Am i a good nfcser?",
             ),
-            validator: _passWordValidator,
+            validator: (cpsw) {
+              MatchValidator(errorText: "Password didn,t match")
+                  .validateMatch(cpsw!, _password!);
+            },
           ),
           //*
           const SizedBox(

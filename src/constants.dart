@@ -11,4 +11,5 @@ const _nfcsLogo = "lib/my_asset/logo/nfcs_logo_blue.jpg",
     _whatLogo = "lib/my_asset/logo/whatsapp_logo_green.jpg",
     _facebookLogo = "lib/my_asset/logo/facebook_logo_cir.jpg",
     _twitterLogo = "lib/my_asset/logo/twitter_logo_white.jpg",
-    _holyGhostImage = "lib/my_asset/images/holy ghost pic .jpg";
+    _holyGhostImage = "lib/my_asset/images/holy ghost pic .jpg",
+    _backgroundImage = "lib/my_asset/images/background5.jpg";

@@ -14,8 +14,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: const Color(0xff000080),
+      ),
       title: "Nfcs app by EarnDee",
-      home: _justInstalled ? const _FormHome() : const _HomePages(),
+      home: _justInstalled ? const _FormHome() : _HomePages(),
     );
   }
 }

@@ -35,6 +35,9 @@ part 'post/page2.dart';
 //Classes incharge of all settings
 part 'my_settings/home.dart';
 
+// Designs
+part 'form/designs/text_form_field.dart';
+
 //General page that affect more than one page.
 part 'main_home.dart';
 part 'home_pages.dart';
