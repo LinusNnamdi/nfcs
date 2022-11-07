@@ -9,18 +9,17 @@ class _FormHome extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Powered by EarnDee",
       theme: ThemeData(
-        // primaryColor: Colors.white70,
+        //*
+        primaryColor: const Color(0xff000080),
 
         //*
         //? Used to style forms input fields.
-        primaryColor: const Color(0xff4444ff),
-
         textTheme: Theme.of(context).textTheme.apply(
               displayColor: _textColor,
             ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: const Color.fromARGB(100, 200, 200, 200),
+          fillColor: const Color.fromARGB(250, 250, 250, 250),
           border: _textFieldBorder(0.1),
           enabledBorder: _textFieldBorder(0.1),
           focusedBorder: _textFieldBorder(0.1),
@@ -35,9 +34,7 @@ class _FormHome extends StatelessWidget {
       ),
 
       //* For form1/...
-      // home: _WelcomeScreen(),
-
-      home: _SignupScreen(),
+      home: _WelcomeScreen(),
     );
   }
 }

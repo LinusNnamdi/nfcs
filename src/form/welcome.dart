@@ -12,7 +12,7 @@ class _WelcomeScreenState extends State<_WelcomeScreen> {
     final size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.all(_defaultPadding),
-      color: const Color(0xff4444ff),
+      color: const Color(0xff000080),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SafeArea(
@@ -71,10 +71,16 @@ class _WelcomeScreenState extends State<_WelcomeScreen> {
                       width: size.width - 8.0,
                       child: ElevatedButton(
                           onPressed: () {
-                            //* moves to login page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => _LoginPage(),
+                              ),
+                            );
                           },
                           style: TextButton.styleFrom(
-                              backgroundColor: Colors.white54),
+                            backgroundColor: Colors.white54.withOpacity(.3),
+                          ),
                           child: Container(
                             color: Colors.transparent,
                             alignment: Alignment.center,
@@ -96,12 +102,20 @@ class _WelcomeScreenState extends State<_WelcomeScreen> {
                   left: 8.0,
                   child: SizedBox(
                       width: size.width - 8.0,
+
+                      //? Used to navigate abck to exactly the previous
+                      //? Page.
                       child: ElevatedButton(
                           onPressed: () {
-                            //* moves to login page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => _SignupScreen(),
+                              ),
+                            );
                           },
                           style: TextButton.styleFrom(
-                            backgroundColor: Colors.white70,
+                            backgroundColor: Colors.white70.withOpacity(.2),
                           ),
                           child: Container(
                             alignment: Alignment.center,
