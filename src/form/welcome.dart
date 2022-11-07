@@ -64,70 +64,75 @@ class _WelcomeScreenState extends State<_WelcomeScreen> {
               //*
               //? LOG IN button
               Positioned(
-                  bottom: size.height * 0.08,
-                  height: size.height * 0.05,
-                  left: 8.0,
-                  child: SizedBox(
-                      width: size.width - 8.0,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => _LoginPage(),
-                              ),
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                            backgroundColor: Colors.white54.withOpacity(.3),
-                          ),
-                          child: Container(
-                            color: Colors.transparent,
-                            alignment: Alignment.center,
-                            child: const Text(
-                              "Log in",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
+                  bottom: size.height * 0.1,
+                  height: size.height * 0.06,
+                  left: size.width * 0.05 - 16,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(_defaultPadding),
+                    child: SizedBox(
+                        width: size.width * 0.9,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => _LoginPage(),
+                                ),
+                              );
+                            },
+                            style: TextButton.styleFrom(
+                              backgroundColor: Colors.white54.withOpacity(.3),
                             ),
-                          )))),
+                            child: Container(
+                              color: Colors.transparent,
+                              alignment: Alignment.center,
+                              child: const Text(
+                                "Log in",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ))),
+                  )),
 
               //*
               //? Register button
               Positioned(
                   bottom: size.height * 0.02,
-                  height: size.height * 0.05,
-                  left: 8.0,
-                  child: SizedBox(
-                      width: size.width - 8.0,
+                  height: size.height * 0.06,
+                  left: size.width * 0.05 - 16,
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(_defaultPadding),
+                      child: SizedBox(
+                          width: size.width * 0.9,
 
-                      //? Used to navigate abck to exactly the previous
-                      //? Page.
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => _SignupScreen(),
+                          //? Used to navigate abck to exactly the previous
+                          //? Page.
+                          child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => _SignupScreen(),
+                                  ),
+                                );
+                              },
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.white70.withOpacity(.2),
                               ),
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                            backgroundColor: Colors.white70.withOpacity(.2),
-                          ),
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: const Text(
-                              "Register",
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                          )))),
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: const Text(
+                                  "Register",
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ))))),
             ],
           ),
         ),

@@ -37,11 +37,11 @@ class _LoginPageState extends State<_LoginPage> {
                   Container(
                     padding: const EdgeInsets.fromLTRB(
                       0,
-                      _defaultPadding * 3,
+                      _defaultPadding,
                       0,
                       0,
                     ),
-                    alignment: Alignment.topLeft,
+                    alignment: Alignment.topCenter,
                     child: Text(
                       "Login page".toUpperCase(),
                       style: const TextStyle(
@@ -97,18 +97,16 @@ class _LoginPageState extends State<_LoginPage> {
                         //*
                         _textFieldName("NFCS ID"),
                         //*
-                        _TextFormFieldRoundRect(
-                          child: TextFormField(
-                            keyboardType: TextInputType.phone,
-                            decoration: const InputDecoration(
-                              hintText: "sch-ur_name-id@nfcs.com",
-                            ),
-                            validator: RequiredValidator(
-                                errorText: "Your digit is needed"),
-                            onSaved: (input) {
-                              _digit = input;
-                            },
+                        TextFormField(
+                          keyboardType: TextInputType.phone,
+                          decoration: const InputDecoration(
+                            hintText: "sch-ur_name-id@nfcs.com",
                           ),
+                          validator: RequiredValidator(
+                              errorText: "Your digit is needed"),
+                          onSaved: (input) {
+                            _digit = input;
+                          },
                         ),
                         //*
                         const SizedBox(
@@ -131,41 +129,66 @@ class _LoginPageState extends State<_LoginPage> {
                         ),
                         //*
                         const SizedBox(
-                          height: _defaultPadding * 4,
+                          height: _defaultPadding * 0.5,
+                        ),
+                        //*
+                        TextButton(
+                          style: const ButtonStyle(
+                            alignment: Alignment.centerLeft,
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => _ForgottenPswScreen(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            "Forgotten Password",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        //*
+                        const SizedBox(
+                          height: _defaultPadding * 2,
                         ),
                       ],
                     ),
                   ),
 
                   //*
-                  Container(
-                    color: Colors.black.withOpacity(0.2),
-                    width: double.infinity,
-                    child: TextButton(
-                      onPressed: () {
-                        if (_loginKey.currentState!.validate()) {
-                          //*
-                          //! Yet to save [_justInstalled] and other form
-                          //!input to a persistent memory, which will delete
-                          //! when the app is uninstalled.
-                          //? To make the user not to login always.
-                          _justInstalled = false;
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(_defaultPadding),
+                    child: Container(
+                      color: Colors.transparent,
+                      width: double.infinity,
+                      child: TextButton(
+                        onPressed: () {
+                          if (_loginKey.currentState!.validate()) {
+                            //*
+                            //! Yet to save [_justInstalled] and other form
+                            //!input to a persistent memory, which will delete
+                            //! when the app is uninstalled.
+                            //? To make the user not to login always.
+                            _justInstalled = false;
 
-                          //? To navigate to the HomePage.
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => _HomePages(),
-                            ),
-                          );
-                        }
-                      },
-                      child: const Text("Login",
-                          style: TextStyle(
-                            color: Color(0xff5CACEE),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                          )),
+                            //? To navigate to the HomePage.
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => _HomePages(),
+                              ),
+                            );
+                          }
+                        },
+                        child: const Text("Login",
+                            style: TextStyle(
+                              color: Color(0xff5CACEE),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                            )),
+                      ),
                     ),
                   )
                 ],

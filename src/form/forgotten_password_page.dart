@@ -1,14 +1,14 @@
 part of "../main.dart";
 
-class _SignupScreen extends StatefulWidget {
+class _ForgottenPswScreen extends StatefulWidget {
   //*
-  _SignupScreen({Key? key}) : super(key: key);
+  _ForgottenPswScreen({Key? key}) : super(key: key);
 
   @override
-  State<_SignupScreen> createState() => _SignupScreenState();
+  State<_ForgottenPswScreen> createState() => _ForgottenPswScreenState();
 }
 
-class _SignupScreenState extends State<_SignupScreen> {
+class _ForgottenPswScreenState extends State<_ForgottenPswScreen> {
   //*
   final _formKey = GlobalKey<FormState>();
 
@@ -42,7 +42,7 @@ class _SignupScreenState extends State<_SignupScreen> {
                   Container(
                     alignment: Alignment.center,
                     child: const Text(
-                      "NFCS REGISTRATION",
+                      "FORGOTTEN PASSWORD",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 24,
@@ -50,36 +50,8 @@ class _SignupScreenState extends State<_SignupScreen> {
                       ),
                     ),
                   ),
-
                   //*
-
-                  //*
-                  Row(
-                    children: [
-                      const Text(
-                        "Already have an account?",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontStyle: FontStyle.italic,
-                          color: Color(0xffF0FFFF),
-                        ),
-                      ),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => _LoginPage(),
-                              ),
-                            );
-                          },
-                          child: const Text("Log in",
-                              style: TextStyle(
-                                color: Color(0xff5CACEE),
-                                fontWeight: FontWeight.bold,
-                              ))),
-                    ],
-                  ),
+                  const SizedBox(height: _defaultPadding * 2),
 
                   //*
                   _RegistrationForm(formKey: _formKey),
@@ -105,7 +77,7 @@ class _SignupScreenState extends State<_SignupScreen> {
                           _justInstalled = false;
                         } else {}
                       },
-                      child: const Text("Register",
+                      child: const Text("Submit",
                           style: TextStyle(
                             color: Color(0xff5CACEE),
                             fontWeight: FontWeight.bold,

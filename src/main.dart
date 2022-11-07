@@ -19,12 +19,14 @@ part 'chat/home.dart';
 
 // Welcome, Login and Register classes
 // and their Authentications
-part 'form/home.dart';
 part 'form/fields.dart';
+part 'form/forgotten_password_page.dart';
+part 'form/home.dart';
 part 'form/login.dart';
 part 'form/methods.dart';
 part 'form/register.dart';
 part 'form/reg_form.dart';
+part 'form/validator.dart';
 part 'form/welcome.dart';
 
 //Classes in charge of your posts
@@ -34,9 +36,6 @@ part 'post/page2.dart';
 
 //Classes incharge of all settings
 part 'my_settings/home.dart';
-
-// Designs
-part 'form/designs/text_form_field.dart';
 
 //General page that affect more than one page.
 part 'main_home.dart';
